@@ -4,7 +4,8 @@ An interactive lockpicking minigame for Foundry VTT, optimized for Dungeons & Dr
 This module replaces the simple skill check with an engaging, time-based challenge.
 The difficulty and the allowed mistakes are dynamically calculated based on the character's abilities.
 
-[Insert Image: `image_231c32.jpg` or similar full UI shot]
+<img width="425" height="822" alt="image" src="https://github.com/user-attachments/assets/fbaeda27-443b-4552-988f-4f5baf75cfce" />
+
 
 ### ✨ Core Features
 
@@ -45,13 +46,14 @@ The availability of the minigame is directly dependent on the character possessi
 3.  If the tool is present, the **golden lock icon** appears next to the tool entry.
 4.  When the player clicks the button, a request is sent to the Game Master.
 
-[Insert Image: `start-button` / `image_ed1642.png`]
+![start-button](https://github.com/user-attachments/assets/934336f4-b257-4486-8e1e-c0af7b29c427)
 
 ### 2. Config Window (GM)
 
 After the player clicks, a configuration window automatically opens for the GM to set the difficulty.
 
-[Insert Image: Config window screenshot]
+<img width="423" height="148" alt="image" src="https://github.com/user-attachments/assets/bfe736d6-652e-4939-8124-d15fb95b5be1" />
+
 
 After confirmation, the minigame window opens for the requesting player. The GM and other present players receive a Spectator window to watch the progress live.
 
