@@ -1,4 +1,5 @@
 🔑 Pick That Lock (Minigame)
+
 <img width="422" height="857" alt="image" src="https://github.com/user-attachments/assets/e9b67866-00e9-43fb-93fc-5e5922bbb49d" />
 
 Ein interaktives Schlossknacken-Minispiel für Foundry VTT, optimiert für Dungeons & Dragons 5e.
