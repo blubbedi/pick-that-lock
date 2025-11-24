@@ -69,6 +69,7 @@ The total sequence length is determined by the DC of the lock. The total time gr
 * If the character has **Disadvantage** (e.g., due to missing the proper tool), the total time is reduced by 40%.
 
 <img width="332" height="190" alt="image" src="https://github.com/user-attachments/assets/338a9e17-6602-4bd3-b599-214c3e3cb75b" />
+<img width="331" height="179" alt="image" src="https://github.com/user-attachments/assets/5c988d49-be7b-4a93-8569-f8f3972c25f8" />
 
 * **Mistakes Allowed:** If an error is made, one allowed mistake is consumed. The number of allowed mistakes is determined by the **Reliable Talent** feature:
     * Mistakes allowed are calculated as **half of the effective training bonus**. This includes the doubling of the bonus if Expertise is present.
