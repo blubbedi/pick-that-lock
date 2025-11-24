@@ -68,7 +68,7 @@ The module dynamically determines the final bonus and the time limit for the min
 The total sequence length is determined by the DC of the lock. The total time granted is determined by the character's total bonus.
 * If the character has **Disadvantage** (e.g., due to missing the proper tool), the total time is reduced by 40%.
 
-[Insert Image: Minigame UI screenshot, e.g., `image_231c32.jpg`]
+<img width="332" height="190" alt="image" src="https://github.com/user-attachments/assets/338a9e17-6602-4bd3-b599-214c3e3cb75b" />
 
 * **Mistakes Allowed:** If an error is made, one allowed mistake is consumed. The number of allowed mistakes is determined by the **Reliable Talent** feature:
     * Mistakes allowed are calculated as **half of the effective training bonus**. This includes the doubling of the bonus if Expertise is present.
@@ -76,7 +76,7 @@ The total sequence length is determined by the DC of the lock. The total time gr
 
 Chat messages are sent out upon the start and end of the minigame.
 
-[Insert Image: Chat message example]
+<img width="298" height="193" alt="image" src="https://github.com/user-attachments/assets/642cf8e6-96e8-47e5-9061-6b9e09148702" />
 
 ---
 
