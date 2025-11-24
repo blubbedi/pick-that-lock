@@ -40,7 +40,7 @@ Nach dem Klick des Spielers öffnet sich beim Spielleiter automatisch ein Config
 Nach dem Bestätigen öffnet sich das Minigame-Fenster bei dem anfragendem Spieler.
 Spielleiter und andere anwesende Spieler erhalten ein Spectator-Fenster um den Fortschritt live mitzuerleben.
 
-3. Die automatische Bonus-Berechnung
+3. Die automatische Bonus-Berechnung                                                                            
 Das Modul bestimmt den endgültigen Bonus und die Zeit für das Minigame automatisch anhand der folgenden Logik,
 die auch im Minigame-Fenster angezeigt wird:
 
