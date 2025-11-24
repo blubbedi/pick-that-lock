@@ -1,7 +1,7 @@
 {
   "id": "pick-that-lock",
   "title": "Pick That Lock (Minigame)", 
-  "description": "Ein interaktives Schlossknack-Minispiel für Dungeons & Dragons 5th Edition mit Custom-UI und Spectre-Modus.",
+  "description": "Ein interaktives Schlossknack-Minispiel für Dungeons & Dragons 5th Edition mit Custom-UI und Spectator-Modus.",
   "version": "1.0.0",
   "compatibility": {
     "minimum": "11",
