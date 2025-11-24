@@ -32,8 +32,14 @@ Klickt der Spieler auf den Button, wird eine Anfrage an den Spielleiter gesendet
 
 ![start-button](https://github.com/user-attachments/assets/934336f4-b257-4486-8e1e-c0af7b29c427)
 
+2. Config-fenster (GM)
+Nach dem Klick des Spielers öffnet sich beim Spielleiter automatisch ein Config-Fenster um den Schwierigkeitsgrad festzulegen.
 
-3. Die automatische Bonus-Berechnung
+<img width="426" height="151" alt="image" src="https://github.com/user-attachments/assets/1b88a6db-a6cd-45f0-b6a1-4cde62312c5b" />
+
+Nach dem Bestätigen öffnet sich das Minigame-Fenster bei dem anfragendem Spieler.
+Spielleiter und andere anwesende Spieler erhalten einen Spectator-Modus um den Fortschritt live mitzuerleben.
+4. Die automatische Bonus-Berechnung
 Das Modul bestimmt den endgültigen Bonus und die Zeit für das Minigame automatisch anhand der folgenden Logik,
 die auch im Minigame-Fenster angezeigt wird:
 
