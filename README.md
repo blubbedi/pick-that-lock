@@ -7,6 +7,7 @@ Dieses Modul ersetzt den einfachen Fertigkeitswurf durch eine fesselnde, zeitbas
 Die Schwierigkeit und die erlaubten Fehler werden dynamisch aus den Fähigkeiten des Charakters berechnet.
 
 ✨ Kern-Funktionen
+
 Interaktives Minigame: Ein zeitbasiertes Spiel, bei dem Pfeiltasten in einer bestimmten Sequenz gedrückt werden müssen.
 D&D 5e Integration: Berechnet den Schwierigkeitsgrad (DC) und den Zeitbonus basierend auf den Charakterfähigkeiten (DEX, Diebeswerkzeug: ungeübt/Übung/Expertise).
 Voraussetzungsprüfung: Der Start-Button wird nur angezeigt, wenn der Charakter Diebeswerkzeug besitzt.
@@ -15,6 +16,7 @@ Custom UI / Ästhetik: Ein immersives, mittelalterliches Design in Verbindung mi
 GM/Spectator Mode: Der Spielleiter und andere Spieler können den Fortschritt in Echtzeit im eigenen Fenster verfolgen.
 
 ⬇️ InstallationModul-ID: pick-that-lock
+
 Um das Modul zu installieren, füge die Manifest-URL in den Foundry VTT Setup-Assistenten ein.
 Öffne den Foundry VTT Setup-Bildschirm.
 Gehe zu Module installieren (Install Module).
@@ -23,7 +25,9 @@ Klicke auf Installieren.
 Aktiviere das Modul in deinen Welt-Einstellungen.
 
 🕹️ Anleitung zur Benutzung.
+
 1. Spiel starten
+
 Die Verfügbarkeit des Minigames hängt direkt vom Besitz des Diebeswerkzeugs ab.
 Der Spieler öffnet seinen Charakterbogen.
 Das Modul sucht das Inventar nach einem Gegenstand namens "Thieves' Tools" oder "Diebeswerkzeug" ab.
@@ -40,7 +44,8 @@ Nach dem Klick des Spielers öffnet sich beim Spielleiter automatisch ein Config
 Nach dem Bestätigen öffnet sich das Minigame-Fenster bei dem anfragendem Spieler.
 Spielleiter und andere anwesende Spieler erhalten ein Spectator-Fenster um den Fortschritt live mitzuerleben.
 
-3. Die automatische Bonus-Berechnung                                                                            
+3. Die automatische Bonus-Berechnung
+                                                                          
 Das Modul bestimmt den endgültigen Bonus und die Zeit für das Minigame automatisch anhand der folgenden Logik,
 die auch im Minigame-Fenster angezeigt wird:
 
