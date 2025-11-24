@@ -1,3 +1,95 @@
+# 🔑 Pick That Lock (Minigame)
+
+An interactive lockpicking minigame for Foundry VTT, optimized for Dungeons & Dragons 5e.
+This module replaces the simple skill check with an engaging, time-based challenge.
+The difficulty and the allowed mistakes are dynamically calculated based on the character's abilities.
+
+[Insert Image: `image_231c32.jpg` or similar full UI shot]
+
+### ✨ Core Features
+
+* **Interactive Minigame:** A time-based game where the player must press arrow keys in a specific sequence.
+* **D&D 5e Integration:** Calculates the Difficulty Class (DC) and the time bonus based on the character's abilities (DEX, Thieves' Tools: unproficient/proficient/Expertise).
+* **Prerequisite Check:** The Start button is only displayed if the character possesses Thieves' Tools.
+* **Reliable Talent:** This Rogue feature is represented by granting a specific number of allowed mistakes.
+* **Custom UI / Aesthetics:** An immersive, medieval design combined with a modern quick-time event.
+* **GM/Spectator Mode:** The Game Master and other players can track the progress in real-time in their own window.
+
+---
+
+## ⬇️ Installation
+
+### Module ID: `pick-that-lock`
+
+To install the module, paste the Manifest URL into the Foundry VTT setup wizard.
+
+1.  Open the Foundry VTT Setup screen.
+2.  Go to **Install Module** (or Modules in the menu).
+3.  Paste the Manifest URL into the field:
+
+    `https://raw.githubusercontent.com/blubbedi/pick-that-lock/main/module.json`
+
+4.  Click **Install**.
+5.  Activate the module in your World Settings.
+
+---
+
+## 🕹️ Usage Guide
+
+### 1. Starting the Game
+
+The availability of the minigame is directly dependent on the character possessing Thieves' Tools.
+
+1.  The player opens their character sheet.
+2.  The module searches the inventory for an item named "Thieves' Tools" or "Diebeswerkzeug."
+3.  If the tool is present, the **golden lock icon** appears next to the tool entry.
+4.  When the player clicks the button, a request is sent to the Game Master.
+
+[Insert Image: `start-button` / `image_ed1642.png`]
+
+### 2. Config Window (GM)
+
+After the player clicks, a configuration window automatically opens for the GM to set the difficulty.
+
+[Insert Image: Config window screenshot]
+
+After confirmation, the minigame window opens for the requesting player. The GM and other present players receive a Spectator window to watch the progress live.
+
+### 3. Automatic Bonus Calculation
+
+The module dynamically determines the final bonus and the time limit for the minigame based on the following logic, which is also displayed in the minigame window:
+
+* **Thieves' Tools (Unproficient):** **+DEX Modifier**
+* **Thieves' Tools (Proficient):** **+DEX Modifier + Proficiency Bonus**
+* **Thieves' Tools (Expertise):** **+DEX Modifier + (Proficiency Bonus × 2)**
+
+The total sequence length is determined by the DC of the lock. The total time granted is determined by the character's total bonus.
+* If the character has **Disadvantage** (e.g., due to missing the proper tool), the total time is reduced by 40%.
+
+[Insert Image: Minigame UI screenshot, e.g., `image_231c32.jpg`]
+
+* **Mistakes Allowed:** If an error is made, one allowed mistake is consumed. The number of allowed mistakes is determined by the **Reliable Talent** feature:
+    * Mistakes allowed are calculated as **half of the effective training bonus**. This includes the doubling of the bonus if Expertise is present.
+    * If all allowed mistakes are consumed, the minigame aborts.
+
+Chat messages are sent out upon the start and end of the minigame.
+
+[Insert Image: Chat message example]
+
+---
+
+## 🤝 Credits & Licensing
+
+This module was conceived and finalized by **blubbedi**.
+
+The development of the module structure, logic (JavaScript), custom designs (CSS), and localization was executed with comprehensive assistance from the Google Gemini AI model.
+
+* **Author/Maintainer:** blubbedi
+* **AI Assistance:** Google Gemini (Code Structuring, Logic, Styling & Debugging)
+* **License:** **MIT** (The full text is available in the `LICENSE` file.)
+
+
+
 🔑 Pick That Lock (Minigame)
 
 <img width="422" height="857" alt="image" src="https://github.com/user-attachments/assets/e9b67866-00e9-43fb-93fc-5e5922bbb49d" />
