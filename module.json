@@ -1,1 +1,44 @@
-
+{
+  "id": "pick-that-lock",
+  "title": "Pick That Lock (Minigame)", 
+  "description": "Ein interaktives Schlossknack-Minispiel für Dungeons & Dragons 5th Edition mit Custom-UI und Spectre-Modus.",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "12",
+    "maximum": "13"
+  },
+  "authors": [
+    {
+      "name": "blubbedi",
+      "url": "https://github.com/blubbedi"
+    }
+  ],
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "styles": [
+    "styles/style.css"
+  ],
+  "languages": [
+    {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "languages/de.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    }
+  ],
+  "packs": [],
+  "system": [
+    "dnd5e"
+  ],
+  "url": "https://github.com/blubbedi/pick-that-lock",
+  "manifest": "https://raw.githubusercontent.com/blubbedi/pick-that-lock/main/module.json",
+  "download": "https://github.com/blubbedi/pick-that-lock/releases/download/1.0.0/pick-that-lock-1.0.0.zip",
+  "license": "LICENSE",
+  "socket": true
+}
