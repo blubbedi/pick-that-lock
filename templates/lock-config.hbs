@@ -1,0 +1,27 @@
+<form class="lockpicking-config">
+  <div class="form-group">
+    <label>Charakter:</label>
+    <select name="selection">
+      {{#each groups}}
+        <optgroup label="{{userName}}">
+          {{#each options}}
+            <option value="{{actorId}}|{{../userId}}">
+              {{actorName}}
+            </option>
+          {{/each}}
+        </optgroup>
+      {{/each}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Schwierigkeitsgrad (DC):</label>
+    <input type="number" name="dc" value="{{defaultDc}}">
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="dialog-button default">
+      Lockpicking starten
+    </button>
+  </div>
+</form>
