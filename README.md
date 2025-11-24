@@ -38,8 +38,9 @@ Nach dem Klick des Spielers öffnet sich beim Spielleiter automatisch ein Config
 <img width="426" height="151" alt="image" src="https://github.com/user-attachments/assets/1b88a6db-a6cd-45f0-b6a1-4cde62312c5b" />
 
 Nach dem Bestätigen öffnet sich das Minigame-Fenster bei dem anfragendem Spieler.
-Spielleiter und andere anwesende Spieler erhalten einen Spectator-Modus um den Fortschritt live mitzuerleben.
-4. Die automatische Bonus-Berechnung
+Spielleiter und andere anwesende Spieler erhalten ein Spectator-Fenster um den Fortschritt live mitzuerleben.
+
+3. Die automatische Bonus-Berechnung
 Das Modul bestimmt den endgültigen Bonus und die Zeit für das Minigame automatisch anhand der folgenden Logik,
 die auch im Minigame-Fenster angezeigt wird:
 
@@ -53,5 +54,11 @@ Bei Nachteil (Diebeswerkzeug-ungeübt) wird die Gesamtzeit um 40% verringert.
 
 <img width="332" height="227" alt="image" src="https://github.com/user-attachments/assets/92075f14-93c2-40a1-9145-8ce52af225a8" />
 
+Bei einem Fehler wird ein Fehlversuch aufgebraucht. Die Anzahl der erlaubten Fehlversuche wird durch den Reliable Talent-Bonus des Charakters bestimmt.
+Reliable Talent: Fehlversuche bei Übung auf Diebeswerkzeug=Übungsbonus/2 (Fehrversuche bei Expertise auf Diebeswerkzeug=Übungsbonus)
+Sind alle erlaubten Fehler aufgebraucht, bricht das Minigame ab.
+Im Chat werden Meldungen zu Start und Ende des Minigame ausgegeben.
 
-.Basis (Ungeübt)Der Bonus ist DEX-Modifikator + 0. Der Zeitbonus ist minimal.GeübtDer Bonus ist DEX-Modifikator + Übungsbonus.ExpertiseDer Bonus ist DEX-Modifikator + (Übungsbonus * 2).Verlässliches Talent (RT)Der Spieler erhält zusätzliche erlaubte Fehlversuche.3. Minigame spielenNachdem der GM den DC im Konfigurationsfenster festgelegt hat, startet das Spiel.Der Spieler muss nacheinander die angezeigten Pfeiltasten (↑, ↓, ←, →) drücken.Der Zeitbalken zeigt die verbleibende Zeit an; die Dauer wird durch den Charakterbonus verlängert.Bei einem Fehler wird ein Fehlversuch aufgebraucht. Die Anzahl der erlaubten Fehlversuche wird durch den Reliable Talent-Bonus des Charakters bestimmt. Sind alle erlaubten Fehler aufgebraucht, bricht das Minigame ab.📸 ScreenshotsElementBeschreibungPlatzhalterHaupt-UIDas interaktive Fenster, das DC, Bonus und den Zeitfortschritt anzeigt.[Füge hier ein Bild des Minigames ein, z.B. image_231c32.jpg]Charakterbogen-TriggerDer goldene Schloss-Button, der neben dem Diebeswerkzeug erscheint (z.B. im Tidy5e Sheet).[Füge hier ein Bild des goldenen Buttons ein, z.B. image_ed1642.png]Bonus-SchildDetailansicht des Messingschilds mit der Bonus-Zusammensetzung.[Füge hier einen Screenshot des Bonus-Schilds ein]🤝 Credits & LizenzierungDieses Modul wurde konzipiert und finalisiert von blubbedi.Die Entwicklung der Modulstruktur, Logik (JavaScript), Custom-Designs (CSS) und Lokalisierung erfolgte mit umfassender Unterstützung des KI-Modells Google Gemini.Autor/Maintainer: blubbediAI Assistance: Google Gemini (Code Structuring, Logic, Styling & Debugging)Lizenz: MIT (Der vollständige Text befindet sich in der Datei LICENSE.)
+<img width="297" height="193" alt="image" src="https://github.com/user-attachments/assets/64828180-477e-4b4b-ba1e-1a99ff567894" />
+
+Credits & LizenzierungDieses Modul wurde konzipiert und finalisiert von blubbedi.Die Entwicklung der Modulstruktur, Logik (JavaScript), Custom-Designs (CSS) und Lokalisierung erfolgte mit umfassender Unterstützung des KI-Modells Google Gemini.Autor/Maintainer: blubbediAI Assistance: Google Gemini (Code Structuring, Logic, Styling & Debugging)Lizenz: MIT (Der vollständige Text befindet sich in der Datei LICENSE.)
