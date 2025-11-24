@@ -45,7 +45,9 @@ Das Modul bestimmt den endgültigen Bonus und die Zeit für das Minigame automat
 die auch im Minigame-Fenster angezeigt wird:
 
 Diebeswerkzeug-ungeübt = +dex mod
+
 Diebeswerkzeug-geübt = +dex mod +Übungsbonus
+
 Diebeswerkzeug-Expertise = +dex mod +Übungsbonus*2
 
 Die länge der Gesamtsequenz ergibt sich aus dem DC des Schloßes.
