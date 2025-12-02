@@ -1,0 +1,91 @@
+name: Release to Foundry VTT
+
+# Dieser Workflow startet nur, wenn du auf GitHub ein neues Release "veröffentlichst" (published)
+on:
+  release:
+    types: [published]
+
+jobs:
+  foundry-release:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Code auschecken, um die module.json lesen zu können
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Daten extrahieren und an die Foundry API senden
+      - name: Publish to Foundry VTT
+        id: publish
+        env:
+          # Wir holen den Token sicher aus den GitHub Secrets
+          FVTT_TOKEN: ${{ secrets.FOUNDRY_API_TOKEN }}
+        run: |
+          # --- KONFIGURATION ---
+          MANIFEST_FILE="module.json"  # Ändere dies zu system.json, falls nötig!
+          # ---------------------
+
+          echo "Lese Daten aus $MANIFEST_FILE..."
+
+          # Wir nutzen 'jq', um Daten aus der JSON-Datei zu lesen (ist auf GitHub vorinstalliert)
+          PACKAGE_ID=$(jq -r '.id' $MANIFEST_FILE)
+          
+          # Wir nehmen die Version direkt aus dem GitHub Release Tag (sicherer als die Datei)
+          # Entfernt ein führendes 'v', falls vorhanden (z.B. v1.0.0 -> 1.0.0)
+          VERSION=${{ github.event.release.tag_name }}
+          VERSION=${VERSION#v}
+
+          # Compatibility Daten aus der module.json lesen
+          MIN_CORE=$(jq -r '.compatibility.minimum' $MANIFEST_FILE)
+          VERIFIED_CORE=$(jq -r '.compatibility.verified' $MANIFEST_FILE)
+
+          # URLs konstruieren
+          REPO_URL="https://github.com/${{ github.repository }}"
+          DOWNLOAD_URL="$REPO_URL/releases/download/${{ github.event.release.tag_name }}/$MANIFEST_FILE"
+          NOTES_URL="$REPO_URL/releases/tag/${{ github.event.release.tag_name }}"
+
+          echo "Paket: $PACKAGE_ID"
+          echo "Version: $VERSION"
+          echo "Manifest URL: $DOWNLOAD_URL"
+
+          # JSON Payload für die API bauen
+          # Wir nutzen jq zum sicheren Erstellen des JSON Strings (vermeidet Fehler bei Anführungszeichen)
+          JSON_PAYLOAD=$(jq -n \
+            --arg id "$PACKAGE_ID" \
+            --arg version "$VERSION" \
+            --arg manifest "$DOWNLOAD_URL" \
+            --arg notes "$NOTES_URL" \
+            --arg min "$MIN_CORE" \
+            --arg verif "$VERIFIED_CORE" \
+            '{
+              id: $id,
+              "dry-run": false,
+              release: {
+                version: $version,
+                manifest: $manifest,
+                notes: $notes,
+                compatibility: {
+                  minimum: $min,
+                  verified: $verif
+                }
+              }
+            }')
+
+          # API Anfrage senden
+          RESPONSE=$(curl -s -w "\nHTTP_STATUS:%{http_code}" -X POST "https://foundryvtt.com/_api/packages/release_version/" \
+            -H "Content-Type: application/json" \
+            -H "Authorization: $FVTT_TOKEN" \
+            -d "$JSON_PAYLOAD")
+
+          # Antwort auswerten
+          HTTP_STATUS=$(echo "$RESPONSE" | grep "HTTP_STATUS" | cut -d':' -f2)
+          BODY=$(echo "$RESPONSE" | sed 's/HTTP_STATUS:.*//')
+
+          echo "Antwort vom Server:"
+          echo "$BODY" | jq .
+
+          if [ "$HTTP_STATUS" -eq 200 ]; then
+            echo "✅ Erfolgreich veröffentlicht!"
+          else
+            echo "❌ Fehler beim Veröffentlichen. HTTP Code: $HTTP_STATUS"
+            exit 1
+          fi
